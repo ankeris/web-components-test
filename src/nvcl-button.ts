@@ -18,11 +18,12 @@ export default class StandardJSWebComponent extends HTMLElement {
   // Called when an observed attribute has been added, removed, updated, or replaced.
   // Also called for initial values when an element is created by the parser, or upgraded.
   // Note: only attributes listed in the observedAttributes property will receive this callback.
-  attributeChangedCallback(attr, oldValue, newValue) {}
+  attributeChangedCallback(attr: any, oldValue: any, newValue: any) {}
 
   // Called every time the element is inserted into the DOM.
   // Useful for running setup code, such as fetching resources or rendering.Generally, you should try to delay work until this time.
   connectedCallback() {
+    if (!this.shadowRoot) return;
     this.shadowRoot.innerHTML = `
     <!-- scoped styles -->
     <style>
