@@ -28,7 +28,7 @@ export default class StandardJSWebComponent extends HTMLElement {
     <!-- scoped styles -->
     <style>
     .btn {
-		  font-size: 200%;
+		  font-size: 150%;
 	  }
     </style>
     <!-- html -->
