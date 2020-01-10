@@ -7,3 +7,5 @@ var nvcl_button_1 = __importDefault(require("./nvcl-button"));
 exports.NovicellButton = nvcl_button_1.default;
 var test_button_1 = __importDefault(require("./test-button"));
 exports.TestButton = test_button_1.default;
+var another_one_1 = __importDefault(require("./another_one"));
+exports.AnotherOne = another_one_1.default;
