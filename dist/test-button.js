@@ -1,7 +1,4 @@
 "use strict";
-// Standard JS WebComponent Starter - kit
-// See README for more information
-/* eslint-disable */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -19,39 +16,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var StandardJSWebComponent = /** @class */ (function (_super) {
     __extends(StandardJSWebComponent, _super);
     function StandardJSWebComponent() {
-        var _this = 
-        // If you define a constructor, always call super() first!
-        // This is specific to CE and required by the spec.
-        _super.call(this) || this;
+        var _this = _super.call(this) || this;
         var shadow = _this.attachShadow({ mode: "open" });
         return _this;
     }
     Object.defineProperty(StandardJSWebComponent, "observedAttributes", {
-        // Specify observed attributes names to be notified in attributeChangedCallback
         get: function () {
             return [];
         },
         enumerable: true,
         configurable: true
     });
-    // Called when an observed attribute has been added, removed, updated, or replaced.
-    // Also called for initial values when an element is created by the parser, or upgraded.
-    // Note: only attributes listed in the observedAttributes property will receive this callback.
     StandardJSWebComponent.prototype.attributeChangedCallback = function (attr, oldValue, newValue) { };
-    // Called every time the element is inserted into the DOM.
-    // Useful for running setup code, such as fetching resources or rendering.Generally, you should try to delay work until this time.
     StandardJSWebComponent.prototype.connectedCallback = function () {
         if (!this.shadowRoot)
             return;
-        this.shadowRoot.innerHTML = "\n    <!-- scoped styles -->\n    <style>\n    .btn {\n\t\t  font-size: 150%;\n\t  }\n    </style>\n    <!-- html -->\n    <button class=\"btn\">This is a button for " + (this.getAttribute("name") ||
-            "World") + "!</button>";
+        this.shadowRoot.innerHTML = "\n      <!-- scoped styles -->\n      <style>\n\n      .center{\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 15px;\n        border-radius: 5px;\n      }\n      .btn {\n        border-radius: 4px;\n     background: linear-gradient(to right, #67b26b, #4ca2cb) !important;\n     border: none;\n     color: #FFFFFF;\n     text-align: center;\n     text-transform: uppercase;\n     padding: 20px;\n     width: 200px;\n     transition: all 0.4s;\n     cursor: pointer;\n     margin: 5px;\n     box-shadow: 0 8px 6px -6px black;\n      }\n\n      a{\n        color: white;\n      }\n\n\n   .fold-ud span {\n     cursor: pointer;\n     display: inline-block;\n     position: relative;\n     transition: 0.4s;\n   }\n   .fold-ud span:after {\n    content: \"--->\";\n     position: absolute;\n     opacity: 0;\n     top: 0;\n     right: -20px;\n     transition: 0.5s;\n   }\n   .fold-ud:hover span {\n     padding-right: 25px;\n   }\n   .fold-ud:hover span:after {\n     opacity: 1;\n     right: 0;\n   }\n      </style>\n      <!-- html -->\n      <div class= \"center\">\n      <span>\n      <button class=\"btn\">\n        </a>\n        <a class=\"fold-ud\" href=\"" + (this.getAttribute("link") || "") + "\" target=\"_blank\" rel=\"nofollow\">  <span> tag mig til  " + (this.getAttribute("navn") ||
+            "World") + "</a>\n        </button>\n\n        </div>\n        ";
     };
-    // Called every time the element is removed from the DOM.
-    // Useful for running clean up code.
     StandardJSWebComponent.prototype.disconnectedCallback = function () { };
-    // The custom element has been moved into a new document(e.g.someone called document.adoptNode(el)).
     StandardJSWebComponent.prototype.adoptedCallback = function () { };
     return StandardJSWebComponent;
 }(HTMLElement));
 exports.default = StandardJSWebComponent;
-// customElements.define("nvcl-button", StandardJSWebComponent);
