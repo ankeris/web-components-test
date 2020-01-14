@@ -15,8 +15,8 @@ customElements.define("test-datepicker2", DatePicker);
 <p> After the above is added you can now freely Define and use components in you project. An example can be seen here</p>
 <pre>
 
-nvcl-button2 name="what"></nvcl-button
-       test-button2 link="https://www.webcomponents.org/introduction"></test-button2
-       test-datepicker2> </test-datepicker2
+<nvcl-button2 name="what"></nvcl-button2>
+       <test-button2 link="https://www.webcomponents.org/introduction"></test-button2>
+      <test-datepicker2> </test-datepicker2>
 </pre>
 
