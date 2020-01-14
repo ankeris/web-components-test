@@ -1,24 +1,35 @@
 # web-components-test
 # Usage
-Written in pure Vanilla JS. Can easily be implemented with Vue, Angular and React. Just install it as seen below
+This webcomponent library template is Written in pure Vanilla JS. It can easily be implemented with all the frameworks such as: Vue, Angular and React.
+Just install the component library as seen below
 ```
 npm i web-components-testing-nvcl
-``` 
+```
 
-# Setup 
-This following codeline is added to main.ts, index.js or main.js depending on which framwork you are installing it to. 
+# Setup
+This following codeline is added to main.ts, index.js or main.js depending on which framwork you are installing it to.
+However, as native javascript does not support "import", es6 is needed in order to import the webcomponents.
 ```
 import {NovicellButton, TestButton, DatePicker} from 'web-components-testing-nvcl';
 customElements.define("nvcl-button2", NovicellButton);
 customElements.define("test-button2", TestButton);
 customElements.define("test-datepicker2", DatePicker);
 ```
-# Example 
+# Example
 After the above is added you can now freely Define and use components in you project. An example can be seen here
 
 ```
 <nvcl-button2 name="what"></nvcl-button2>
 <test-button2 link="https://www.webcomponents.org/introduction"></test-button2>
-<test-datepicker2> </test-datepicker2> 
+<test-datepicker2> </test-datepicker2>
 ```
 
+# Add new webcomponents to the library
+In order to add new web components to the library do the following:
+ - go to src and add the mynewcomponent.ts
+ - go to index.ts and add "import MyNewComponent from './my-new-webcomponent';"
+ - also export in the same document  export {
+    MyNewComponent,
+    MyNewComponent2}
+- go to your project (react, vue, angular, vanilla) and do the setup steps from "Setup".
+- Like this you can add your own tags using the template.
