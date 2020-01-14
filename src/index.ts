@@ -7,6 +7,6 @@ export {
     NovicellButton,
     TestButton,
     AnotherOne,
-    DatePicker
+    DatePicker,
 
 }
