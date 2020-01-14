@@ -11,3 +11,5 @@ const another_one_1 = __importDefault(require("./another_one"));
 exports.AnotherOne = another_one_1.default;
 const date_picker_1 = __importDefault(require("./date-picker"));
 exports.DatePicker = date_picker_1.default;
+const os_checker_1 = __importDefault(require("./os-checker"));
+exports.OsChecker = os_checker_1.default;

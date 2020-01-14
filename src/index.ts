@@ -9,7 +9,7 @@ export {
     TestButton,
     AnotherOne,
     DatePicker,
-    OsChecker,
+    OsChecker
 
 
 }

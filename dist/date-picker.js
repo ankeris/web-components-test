@@ -39,7 +39,7 @@ class StandardJSWebComponent extends HTMLElement {
         font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
       }
       label {
-        display:  block;
+        display: block;
       }
       input {
         border: 1px solid #c4c4c4;
