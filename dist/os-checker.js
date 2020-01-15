@@ -15,9 +15,9 @@ class StandardJSWebComponent extends HTMLElement {
         this.shadowRoot.innerHTML = `
       <body style="text-align:center;">
 
-    <h1 style="color:green;">GeeksforGeeks</h1>
+    <h1 style="color:green;">Os checker</h1>
 
-    <button ondblclick="version()">
+    <button onclick="version()">
         Return OS Version
     </button>
 
