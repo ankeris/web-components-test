@@ -28,16 +28,24 @@ After the above is added you can now freely Define and use components in you pro
 In order to add new web components to the library do the following:
 
 - Go to src and add the mynewcomponent.ts
+
 - Go to index.ts and add "import MyNewComponent from './my-new-webcomponent';"
+
 - Also export in the same document  export {
     MyNewComponent,
     MyNewComponent2}
+    
 - To make sure that it pushes the changes from src to dist you have to run "npm run start" from the CLI in the folder. 
+
 - Go to your project (react, vue, angular, vanilla) and do the setup steps from "Setup".
+
 - Add, Commit and push the changes in the files to Github.
+
 - Now update the npm package aswell by performing:  
     npm version <update_type>
     npm publish.
+    
 - After this update go back to the project where you want to use the components and install the new version of the package like this:
     npm i web-components-testing-nvcl
+    
 - Now you can freely use your own tag.
