@@ -1,46 +1,70 @@
-export default class StandardJSWebComponent extends HTMLElement {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class StandardJSWebComponent extends HTMLElement {
     constructor() {
-
-      super();
-      const shadow = this.attachShadow({ mode: "open" });
+        super();
+        const shadow = this.attachShadow({ mode: "open" });
     }
     static get observedAttributes() {
-      return [];
+        return [];
     }
-
-    attributeChangedCallback(attr: any, oldValue: any, newValue: any) {}
-
-
+    attributeChangedCallback(attr, oldValue, newValue) { }
     connectedCallback() {
-        if (!this.shadowRoot) return;
-      this.shadowRoot.innerHTML = `
+        if (!this.shadowRoot)
+            return;
+        this.shadowRoot.innerHTML = `
       <body style="text-align:center;">
-
-    <h1 style="color:green;">Os checker</h1>
-
-    <button onclick="version()">
-        Return OS Version
+      <div style="
+      display: flex;
+      justify-content: center;
+      ">
+    <h1 style="color:green;">Check dit operativsystem</h1>
+    </div>
+    <div style="display: flex;
+    justify-content: center;
+    ">
+    <button>
+        Retuner styresystem
     </button>
+    </div>
 
-    <p id="OS"></p>
-
-    <!-- Script to return OS details -->
-    <script>
-        function version() {
-            var os = navigator.appVersion;
-
-            // Display the OS details
-            document.getElementById("OS").innerHTML = os;
-        }
-    </script>
 </body>
         `;
+//editable Javascript for
+        const buttonElement = this.shadowRoot.querySelector("button");
+        this.initClickListener(buttonElement);
+
     }
 
 
-    disconnectedCallback() {}
+    initClickListener(buttonElement) {
+        buttonElement.addEventListener("click", function version() {
+            //Edit javascript for button
+            var os = navigator.appVersion;
+
+            let newPtag = document.createElement("p" );
+            newPtag.style.cssText = "display: flex;justify-content: center;";
+
+            newPtag.innerHTML = os;
+            document.body.appendChild(newPtag);
+            // ^^ --
+        });
+        console.log(buttonElement);
+    }
 
 
-    adoptedCallback() {}
-  }
+    disconnectedCallback() { }
+    adoptedCallback() { }
+}
+exports.default = StandardJSWebComponent;
 
+//setTimeout(() => {
+//
+  //  const buttonElement = this.shadowRoot.querySelector("button");
+    //console.log(buttonElement);
+   // buttonElement.style.backgroundColor = "green";
+   // buttonElement.addEventListener("click", function(){
+     //    var os = navigator.appVersion;
+       // document.getElementById("OS").innerHTML = os;
+   // });
+// }, 200);
