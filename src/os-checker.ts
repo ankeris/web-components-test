@@ -1,18 +1,19 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class StandardJSWebComponent extends HTMLElement {
-    constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: "open" });
-    }
-    static get observedAttributes() {
-        return [];
-    }
-    attributeChangedCallback(attr, oldValue, newValue) { }
-    connectedCallback() {
-        if (!this.shadowRoot)
-            return;
-        this.shadowRoot.innerHTML = `
+export default class StandardJSWebComponent extends HTMLElement {
+  constructor() {
+
+    super();
+    const shadow = this.attachShadow({ mode: "open" });
+  }
+  static get observedAttributes() {
+    return [];
+  }
+
+  attributeChangedCallback(attr: any, oldValue: any, newValue: any) {}
+
+
+  connectedCallback() {
+      if (!this.shadowRoot) return;
+    this.shadowRoot.innerHTML = `
       <body style="text-align:center;">
       <div style="
       display: flex;
@@ -37,7 +38,7 @@ class StandardJSWebComponent extends HTMLElement {
     }
 
 
-    initClickListener(buttonElement) {
+    initClickListener(buttonElement: any) {
         buttonElement.addEventListener("click", function version() {
             //Edit javascript for button
             var os = navigator.appVersion;
@@ -53,18 +54,8 @@ class StandardJSWebComponent extends HTMLElement {
     }
 
 
-    disconnectedCallback() { }
-    adoptedCallback() { }
-}
-exports.default = StandardJSWebComponent;
+    disconnectedCallback() {}
 
-//setTimeout(() => {
-//
-  //  const buttonElement = this.shadowRoot.querySelector("button");
-    //console.log(buttonElement);
-   // buttonElement.style.backgroundColor = "green";
-   // buttonElement.addEventListener("click", function(){
-     //    var os = navigator.appVersion;
-       // document.getElementById("OS").innerHTML = os;
-   // });
-// }, 200);
+
+    adoptedCallback() {}
+  }

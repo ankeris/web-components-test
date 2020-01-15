@@ -14,26 +14,37 @@ class StandardJSWebComponent extends HTMLElement {
             return;
         this.shadowRoot.innerHTML = `
       <body style="text-align:center;">
-
-    <h1 style="color:green;">Os checker</h1>
-
-    <button onclick="version()">
-        Return OS Version
+      <div style="
+      display: flex;
+      justify-content: center;
+      ">
+    <h1 style="color:green;">Check dit operativsystem</h1>
+    </div>
+    <div style="display: flex;
+    justify-content: center;
+    ">
+    <button>
+        Retuner styresystem
     </button>
+    </div>
 
-    <p id="OS"></p>
-
-    <!-- Script to return OS details -->
-    <script>
-        function version() {
-            var os = navigator.appVersion;
-
-            // Display the OS details
-            document.getElementById("OS").innerHTML = os;
-        }
-    </script>
 </body>
         `;
+        //editable Javascript for
+        const buttonElement = this.shadowRoot.querySelector("button");
+        this.initClickListener(buttonElement);
+    }
+    initClickListener(buttonElement) {
+        buttonElement.addEventListener("click", function version() {
+            //Edit javascript for button
+            var os = navigator.appVersion;
+            let newPtag = document.createElement("p");
+            newPtag.style.cssText = "display: flex;justify-content: center;";
+            newPtag.innerHTML = os;
+            document.body.appendChild(newPtag);
+            // ^^ --
+        });
+        console.log(buttonElement);
     }
     disconnectedCallback() { }
     adoptedCallback() { }
