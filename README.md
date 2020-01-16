@@ -2,14 +2,16 @@
 # Usage
 This webcomponent library template is Written in pure Vanilla JS. It can easily be implemented with all the frameworks such as: Vue, Angular and React.
 Just install the component library as seen below
-```
+
+```bash
 npm i web-components-testing-nvcl
 ```
 
 # Setup
 This following codeline is added to main.ts, index.js or main.js depending on which framwork you are installing it to.
 However, as native javascript does not support "import", es6 is needed in order to import the webcomponents.
-```
+
+```js
 import {NovicellButton, TestButton, DatePicker} from 'web-components-testing-nvcl';
 customElements.define("nvcl-button2", NovicellButton);
 customElements.define("test-button2", TestButton);
@@ -18,7 +20,7 @@ customElements.define("test-datepicker2", DatePicker);
 # Example
 After the above is added you can now freely Define and use components in you project. An example can be seen here
 
-```
+```html
 <nvcl-button2 name="what"></nvcl-button2>
 <test-button2 link="https://www.webcomponents.org/introduction"></test-button2>
 <test-datepicker2> </test-datepicker2>
