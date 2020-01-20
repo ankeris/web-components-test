@@ -15,3 +15,5 @@ const os_checker_1 = __importDefault(require("./os-checker"));
 exports.OsChecker = os_checker_1.default;
 const wave_1 = __importDefault(require("./wave"));
 exports.waves = wave_1.default;
+const intersectionobserver_1 = __importDefault(require("./intersectionobserver"));
+exports.intersectionobserver = intersectionobserver_1.default;

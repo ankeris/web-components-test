@@ -4,6 +4,7 @@ import AnotherOne from './another_one';
 import DatePicker from './date-picker';
 import OsChecker from './os-checker';
 import waves from './wave';
+import intersectionobserver from './intersectionobserver';
 
 export {
     NovicellButton,
@@ -12,6 +13,7 @@ export {
     DatePicker,
     OsChecker,
     waves,
+    intersectionobserver,
 
 
 }
