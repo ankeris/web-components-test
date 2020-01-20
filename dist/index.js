@@ -13,3 +13,5 @@ const date_picker_1 = __importDefault(require("./date-picker"));
 exports.DatePicker = date_picker_1.default;
 const os_checker_1 = __importDefault(require("./os-checker"));
 exports.OsChecker = os_checker_1.default;
+const wave_1 = __importDefault(require("./wave"));
+exports.waves = wave_1.default;
