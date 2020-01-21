@@ -16,84 +16,79 @@ class StandardJSWebComponent extends HTMLElement {
         this.shadowRoot.innerHTML =
             //just add the html and css below for the webcomponent:
             `
-<body>
-    <h1>Scroll down 👇</h1>
+  <!-- scoped styles -->
+  <style>
 
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-</body>
+  section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  color: #202050;
+  margin-top: 20vh;
+  }
 
-<style>
-    :root {
-        --base: #202050;
-        --border: #ccc;
-    }
+  .box {
+  width: 30vh;
+  height: 30vh;
+  margin: 20vh 0;
+  border: 0.2rem solid #ccc;
+  border-radius: 50%;
+  transition: background 0.8s ease,
+  border 0.4s ease;
+  }
 
-    body {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-        color: var(--base);
-        margin-top: 20vh;
-    }
+  .box.isVisible {
+  border-color: #202050;
+  background-color: #202050;
+  }
+  </style>
+  <!-- html -->
 
-    .box {
-        width: 30vh;
-        height: 30vh;
-        margin: 20vh 0;
-        border: 0.2rem solid var(--border);
-        border-radius: 50%;
-        transition: background 0.8s ease,
-            border 0.4s ease;
-    }
+  <section id="body">
+  <h1>Scroll down 👇</h1>
 
-    .box.isVisible {
-        border-color: var(--base);
-        background-color: var(--base);
-    }
-</style>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  </section>
 
-<script>
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    }
-
-    let callback = (entries) => {
-        entries.forEach(entry => {
-
-
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add('isVisible');
-            } else {
-                entry.target.classList.remove('isVisible');
-            }
-
+  `;
+        //add own js
+        var options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // percentage of the target element which is visible
+        };
+        let callback = (entries) => {
+            entries.forEach((entry) => {
+                // If entry (box) is visible - according with the params set in `options`
+                // then adds `isVisible` class to box
+                // otherwise removes `isVisible` class
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('isVisible');
+                }
+                else {
+                    entry.target.classList.remove('isVisible');
+                }
+            });
+        };
+        // Create the intersection observer instance by calling its constructor and passing it a
+        // callback function to be run whenever a threshold is crossed in one direction or the other:
+        let observer = new IntersectionObserver(callback, options);
+        // Get all the `.box` from !!!!!!!!!!!SHADOWDOM!!!!!!!!!!!!! and attach the observer to these
+        this.shadowRoot.querySelectorAll('.box')
+            .forEach(box => {
+            observer.observe(box);
         });
-    }
-
-
-    let observer = new IntersectionObserver(callback, options);
-
-
-    document.querySelectorAll('.box')
-        .forEach(box => {
-            observer.observe(box)
-        });
-</script>
-
-        `;
+        //add own js
     }
     //add javascript for component here
     disconnectedCallback() { }
