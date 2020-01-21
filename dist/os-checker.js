@@ -13,22 +13,22 @@ class StandardJSWebComponent extends HTMLElement {
         if (!this.shadowRoot)
             return;
         this.shadowRoot.innerHTML = `
-      <body style="text-align:center;">
-      <div style="
-      display: flex;
-      justify-content: center;
-      ">
-    <h1 style="color:green;">Check dit operativsystem</h1>
-    </div>
-    <div style="display: flex;
+    <section style="text-align:center;">
+    <div style="
+    display: flex;
     justify-content: center;
     ">
-    <button>
-        Retuner styresystem
-    </button>
-    </div>
+  <h1 style="color:green;">Check dit operativsystem</h1>
+  </div>
+  <div style="display: flex;
+  justify-content: center;
+  ">
+  <button>
+      Retuner styresystem
+  </button>
+  </div>
 
-</body>
+</section>
         `;
         //editable Javascript for
         const buttonElement = this.shadowRoot.querySelector("button");
@@ -41,7 +41,7 @@ class StandardJSWebComponent extends HTMLElement {
             let newPtag = document.createElement("p");
             newPtag.style.cssText = "display: flex;justify-content: center;";
             newPtag.innerHTML = os;
-            document.body.appendChild(newPtag);
+            buttonElement.closest("section").insertAdjacentHTML("afterEnd", newPtag.outerHTML);
             // ^^ --
         });
         console.log(buttonElement);
