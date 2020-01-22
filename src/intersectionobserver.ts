@@ -30,7 +30,7 @@ export default class StandardJSWebComponent extends HTMLElement {
   margin-top: 20vh;
   }
 
-  .box {
+  .circle {
   width: 30vh;
   height: 30vh;
   margin: 20vh 0;
@@ -40,7 +40,18 @@ export default class StandardJSWebComponent extends HTMLElement {
   border 0.4s ease;
   }
 
-  .box.isVisible {
+  .square{
+    width: 30vh;
+    height: 30vh;
+    margin: 20vh 0;
+    border: 0.2rem solid #ccc;
+    border-radius: 0%;
+    transition: background 0.8s ease,
+    border 0.4s ease;
+  }
+
+
+  .isVisible {
   border-color: #202050;
   background-color: #202050;
   }
@@ -48,18 +59,17 @@ export default class StandardJSWebComponent extends HTMLElement {
   <!-- html -->
 
   <section id="body">
-  <h1>Scroll down 👇</h1>
+  <h1>Scroll down 👇 now</h1>
 
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
+  <div class="${this.getAttribute("element")}"></div>
   </section>
 
   `;
@@ -86,7 +96,7 @@ export default class StandardJSWebComponent extends HTMLElement {
           // callback function to be run whenever a threshold is crossed in one direction or the other:
           let observer = new IntersectionObserver(callback, options);
           // Get all the `.box` from !!!!!!!!!!!SHADOWDOM!!!!!!!!!!!!! and attach the observer to these
-          this.shadowRoot.querySelectorAll('.box')
+          this.shadowRoot.querySelectorAll(".circle, .square")
               .forEach(box => {
               observer.observe(box);
           });
