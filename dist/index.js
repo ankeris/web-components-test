@@ -17,3 +17,5 @@ const wave_1 = __importDefault(require("./wave"));
 exports.waves = wave_1.default;
 const intersectionobserver_1 = __importDefault(require("./intersectionobserver"));
 exports.intersectionobserver = intersectionobserver_1.default;
+const backgroundpicker_1 = __importDefault(require("./backgroundpicker"));
+exports.backgroundpicker = backgroundpicker_1.default;
