@@ -33,16 +33,17 @@ export default class StandardJSWebComponent extends HTMLElement {
     //Chose textcolor for p, h1
     let picker = document.getElementById('textColorPicker');
     let tags = document.querySelectorAll("p, h1, h2, h3, h4");
-    picker?.addEventListener('change', function(){
+    if(picker){picker.addEventListener('change', function(e:any){
        for (let i = 0; i < tags.length; i++) {
-           tags[i].style.color = this.value;
+        (<any>tags[i]).style.color = e.target.value;
        }
-    })
+    })}
     // chose background color for body
       let clpicker = document.getElementById('colorPicker');
     let box = document.getElementsByTagName('body')[0];
-    if(clpicker){clpicker.addEventListener('change', function(){
-       box.style.backgroundColor = this.value;
+    if(clpicker){clpicker.addEventListener('change', function(e:any){
+      console.log(e)
+       box.style.backgroundColor = e.target.value;
     })}
 
   }

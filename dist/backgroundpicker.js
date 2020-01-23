@@ -10,7 +10,6 @@ class StandardJSWebComponent extends HTMLElement {
     }
     attributeChangedCallback(attr, oldValue, newValue) { }
     connectedCallback() {
-        var _a;
         if (!this.shadowRoot)
             return;
         this.shadowRoot.innerHTML = `
@@ -33,17 +32,20 @@ class StandardJSWebComponent extends HTMLElement {
         //Chose textcolor for p, h1
         let picker = document.getElementById('textColorPicker');
         let tags = document.querySelectorAll("p, h1, h2, h3, h4");
-        (_a = picker) === null || _a === void 0 ? void 0 : _a.addEventListener('change', function () {
-            for (let i = 0; i < tags.length; i++) {
-                tags[i].style.color = this.value;
-            }
-        });
+        if (picker) {
+            picker.addEventListener('change', function (e) {
+                for (let i = 0; i < tags.length; i++) {
+                    tags[i].style.color = e.target.value;
+                }
+            });
+        }
         // chose background color for body
         let clpicker = document.getElementById('colorPicker');
         let box = document.getElementsByTagName('body')[0];
         if (clpicker) {
-            clpicker.addEventListener('change', function () {
-                box.style.backgroundColor = this.value;
+            clpicker.addEventListener('change', function (e) {
+                console.log(e);
+                box.style.backgroundColor = e.target.value;
             });
         }
     }
