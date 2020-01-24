@@ -14,21 +14,35 @@ export default class StandardJSWebComponent extends HTMLElement {
     connectedCallback() {
         if (!this.shadowRoot) return;
       this.shadowRoot.innerHTML = `
-    <body>
-        <h1>
-            Textcolor
-        </h1>
-        <input type="color" name="colorPicker" id="textColorPicker" title="Choose Color" />
-        <p>
-            Test color
-        </p>
+      <style>
+      slot h1{
+        display:flex;
+        justify-content: center;
+      }
 
-        <h1>
-            background
-        </h1>
+      .center{
+          display:flex;
+          justify-content: center;
+      }
+      </style>
+
+      <div class= "center">
+        <slot id="slot1"> </slot>
+      </div>
+
+      <div class= "center">
+        <input type="color" name="colorPicker" id="textColorPicker" title="Choose Color" />
+      </div>
+
+      <div class= "center">
+        <slot id="slot2"> </slot>
+      </div>
+
+      <div class= "center">
         <input type="color" name="colorPicker" id="colorPicker" title="Choose Color" />
-    </body>
+      </div>
           `;
+
     //editable Javascript for
     //Chose textcolor for p, h1
     let picker = document.getElementById('textColorPicker');

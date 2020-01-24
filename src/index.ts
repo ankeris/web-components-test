@@ -1,6 +1,5 @@
-import NovicellButton from './nvcl-button';
-import TestButton from './test-button';
-import AnotherOne from './another_one';
+import NovicellButton from './click-button';
+import TestButton from './link-button';
 import DatePicker from './date-picker';
 import OsChecker from './os-checker';
 import waves from './wave';
@@ -10,7 +9,6 @@ import  backgroundpicker from './backgroundpicker';
 export {
     NovicellButton,
     TestButton,
-    AnotherOne,
     DatePicker,
     OsChecker,
     waves,

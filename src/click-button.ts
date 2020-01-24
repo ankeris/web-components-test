@@ -29,11 +29,27 @@ export default class StandardJSWebComponent extends HTMLElement {
     <style>
     .btn {
 		  font-size: 150%;
-	  }
+      }
+      slot h1{
+        display:flex;
+        justify-content: center;
+      }
+
+      .center{
+          display:flex;
+          justify-content: center;
+      }
     </style>
     <!-- html -->
+    <div class= "center">
+    <slot></slot>
+    </div>
+    <div class= "center">
     <button class="btn">This is a button for ${this.getAttribute("name") ||
-      "World"}!</button>`;
+            "World"}!</button>
+            </div>
+
+            `;
   }
 
   // Called every time the element is removed from the DOM.
