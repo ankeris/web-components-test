@@ -17,3 +17,5 @@ const intersectionobserver_1 = __importDefault(require("./intersectionobserver")
 exports.intersectionobserver = intersectionobserver_1.default;
 const backgroundpicker_1 = __importDefault(require("./backgroundpicker"));
 exports.backgroundpicker = backgroundpicker_1.default;
+const theme_picker_1 = __importDefault(require("./theme-picker"));
+exports.themepicker = theme_picker_1.default;
