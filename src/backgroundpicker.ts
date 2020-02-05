@@ -15,32 +15,77 @@ export default class StandardJSWebComponent extends HTMLElement {
         if (!this.shadowRoot) return;
       this.shadowRoot.innerHTML = `
       <style>
-      slot h1{
-        display:flex;
-        justify-content: center;
-      }
+        body{
+                transition: background-color 1.5s linear 0.5s;
+              }
 
-      .center{
-          display:flex;
-          justify-content: center;
-      }
-      </style>
+        p, h1, h2, h3, h4, h5 {
+                transition: color 1.5s ease 0.1s;
+        }
 
-      <div class= "center">
-        <slot id="slot1"> </slot>
-      </div>
+        .colorelement{
+            width: 3rem;
+            height: 3rem;
+            position:absolute;
+            border-radius: 50%;
+            top: 80%;
+            left: 90%;
+            bottom: 1rem;
 
-      <div class= "center">
-        <input type="color" name="colorPicker" id="textColorPicker" title="Choose Color" />
-      </div>
+            }
+            .colorelement2{
+            width: 3rem;
+            height: 3rem;
+            position:absolute;
+            border-radius: 50%;
+            top: 85%;
+            left: 90%;
+            bottom: 1rem;
 
-      <div class= "center">
-        <slot id="slot2"> </slot>
-      </div>
+            }
 
-      <div class= "center">
-        <input type="color" name="colorPicker" id="colorPicker" title="Choose Color" />
-      </div>
+              input[type=color]{
+          width: 3rem;
+          height: 3rem;
+          border: none;
+          border-radius: 40px;
+          background: none;
+          display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position:fixed;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+          border: solid 1px #000;
+          border-radius: 50%;
+
+        }
+        .box1:before{
+          content: "T";
+
+          text-align:center;
+          position:absolute;
+        }
+        .box2:before{
+          content: "🎨";
+          text-align:center;
+          position:absolute;
+        }
+        </style>
+
+      <div class="colorelement">
+                      <! –– TextColor picker ––>
+                        <input class="box1" type="color" name="colorPicker" id="textColorPicker" title="Choose Color" value="#BEBEBE"/>
+                      </div>
+
+                      <div class="colorelement2">
+                      <! –– Color picker ––>
+                        <input  class="box2"type="color" name="colorPicker" id="colorPicker" title="Choose Color" value="#BEBEBE" />
+                    </div>
+
+
           `;
 
     //editable Javascript for
@@ -49,7 +94,6 @@ export default class StandardJSWebComponent extends HTMLElement {
     let tags = document.querySelectorAll("p, h1, h2, h3, h4");
     let clpicker = this.shadowRoot.getElementById('colorPicker');
     let box = document.querySelectorAll('body,header');
-
 
     (picker) === null || picker === void 0 ? void 0 : picker.addEventListener('change', function (e:any) {
         for (let i = 0; i < tags.length; i++) {
@@ -62,7 +106,6 @@ export default class StandardJSWebComponent extends HTMLElement {
           (<any>box[i]).style.backgroundColor = e.target.value;
       }
     });
-
 
 }
 
