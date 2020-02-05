@@ -43,24 +43,20 @@ class StandardJSWebComponent extends HTMLElement {
           `;
         //editable Javascript for
         //Chose textcolor for p, h1
-        let picker = document.getElementById('textColorPicker');
+        let picker = this.shadowRoot.getElementById('textColorPicker');
         let tags = document.querySelectorAll("p, h1, h2, h3, h4");
-        if (picker) {
-            picker.addEventListener('change', function (e) {
-                for (let i = 0; i < tags.length; i++) {
-                    tags[i].style.color = e.target.value;
-                }
-            });
-        }
-        // chose background color for body
-        let clpicker = document.getElementById('colorPicker');
-        let box = document.getElementsByTagName('body')[0];
-        if (clpicker) {
-            clpicker.addEventListener('change', function (e) {
-                console.log(e);
-                box.style.backgroundColor = e.target.value;
-            });
-        }
+        let clpicker = this.shadowRoot.getElementById('colorPicker');
+        let box = document.querySelectorAll('body,header');
+        (picker) === null || picker === void 0 ? void 0 : picker.addEventListener('change', function (e) {
+            for (let i = 0; i < tags.length; i++) {
+                tags[i].style.color = e.target.value;
+            }
+        });
+        (clpicker) === null || clpicker === void 0 ? void 0 : clpicker.addEventListener('change', function (e) {
+            for (let i = 0; i < box.length; i++) {
+                box[i].style.backgroundColor = e.target.value;
+            }
+        });
     }
     disconnectedCallback() { }
     adoptedCallback() { }
