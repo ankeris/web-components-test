@@ -91,7 +91,7 @@ export default class StandardJSWebComponent extends HTMLElement {
     //editable Javascript for
     //Chose textcolor for p, h1
     let picker = this.shadowRoot.getElementById('textColorPicker');
-    let tags = document.querySelectorAll("p, h1, h2, h3, h4");
+    let tags = document.querySelectorAll(" html, p, h1, h2, h3, h4, h5, h6");
     let clpicker = this.shadowRoot.getElementById('colorPicker');
     let box = document.querySelectorAll('body,header');
 

@@ -179,25 +179,25 @@ input[type="color"]::-webkit-color-swatch {
 
         }
 
-            document.getElementById('toggle')!.addEventListener('click', () => {
-              document.getElementById('blender')!.classList.toggle('expand');
-              document.getElementById('toggle')!.classList.toggle('ZIndex-checker');
+        this.shadowRoot.getElementById('toggle')!.addEventListener('click', () => {
+            this.shadowRoot?.getElementById('blender')!.classList.toggle('expand');
+            this.shadowRoot?.getElementById('toggle')!.classList.toggle('ZIndex-checker');
             });
 
             if  (screen.width >= 768) {
-            document.getElementById('toggle')!.addEventListener('mouseenter', () => {
-              document.getElementById('blender')!.classList.add('expand-hover');
-              document.getElementById('toggle')!.classList.add('ZIndex-checker');
+              this.shadowRoot.getElementById('toggle')!.addEventListener('mouseenter', () => {
+                this.shadowRoot?.getElementById('blender')!.classList.add('expand-hover');
+                this.shadowRoot?.getElementById('toggle')!.classList.add('ZIndex-checker');
             });
-            document.getElementById('toggle')!.addEventListener('mouseout', () => {
-              document.getElementById('blender')!.classList.remove('expand-hover');
-              document.getElementById('toggle')!.classList.remove('ZIndex-checker');
+            this.shadowRoot.getElementById('toggle')!.addEventListener('mouseout', () => {
+              this.shadowRoot?.getElementById('blender')!.classList.remove('expand-hover');
+              this.shadowRoot?.getElementById('toggle')!.classList.remove('ZIndex-checker');
 
             })}
 
-                let clpicker = document.getElementById('colorPicker');
-                let box = document.getElementById("blender");
-                let picker = document.getElementById('textColorPicker');
+                let clpicker = this.shadowRoot.getElementById('colorPicker');
+                let box = this.shadowRoot.getElementById("blender");
+                let picker = this.shadowRoot.getElementById('textColorPicker');
                 let tags = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
                 function invertHex(hex: any) {
                   return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()

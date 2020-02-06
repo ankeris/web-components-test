@@ -192,9 +192,9 @@ input[type="color"]::-webkit-color-swatch {
 
 
         let picker = this.shadowRoot.getElementById('textColorPicker');
-    let tags = document.querySelectorAll("p, h1, h2, h3, h4");
+    let tags = document.querySelectorAll("html, p, h1, h2, h3, h4, h5, h6");
     let clpicker = this.shadowRoot.getElementById('colorPicker');
-    let box = document.querySelectorAll('body,header');
+    let box = document.querySelectorAll('html, body, header');
 
     (picker) === null || picker === void 0 ? void 0 : picker.addEventListener('change', function (e:any) {
         for (let i = 0; i < tags.length; i++) {

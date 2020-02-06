@@ -179,23 +179,26 @@ input[type="color"]::-webkit-color-swatch {
                 x.style.display = "block";
             }
         }
-        document.getElementById('toggle').addEventListener('click', () => {
-            document.getElementById('blender').classList.toggle('expand');
-            document.getElementById('toggle').classList.toggle('ZIndex-checker');
+        this.shadowRoot.getElementById('toggle').addEventListener('click', () => {
+            var _a, _b;
+            ((_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.getElementById('blender')).classList.toggle('expand');
+            ((_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.getElementById('toggle')).classList.toggle('ZIndex-checker');
         });
         if (screen.width >= 768) {
-            document.getElementById('toggle').addEventListener('mouseenter', () => {
-                document.getElementById('blender').classList.add('expand-hover');
-                document.getElementById('toggle').classList.add('ZIndex-checker');
+            this.shadowRoot.getElementById('toggle').addEventListener('mouseenter', () => {
+                var _a, _b;
+                ((_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.getElementById('blender')).classList.add('expand-hover');
+                ((_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.getElementById('toggle')).classList.add('ZIndex-checker');
             });
-            document.getElementById('toggle').addEventListener('mouseout', () => {
-                document.getElementById('blender').classList.remove('expand-hover');
-                document.getElementById('toggle').classList.remove('ZIndex-checker');
+            this.shadowRoot.getElementById('toggle').addEventListener('mouseout', () => {
+                var _a, _b;
+                ((_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.getElementById('blender')).classList.remove('expand-hover');
+                ((_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.getElementById('toggle')).classList.remove('ZIndex-checker');
             });
         }
-        let clpicker = document.getElementById('colorPicker');
-        let box = document.getElementById("blender");
-        let picker = document.getElementById('textColorPicker');
+        let clpicker = this.shadowRoot.getElementById('colorPicker');
+        let box = this.shadowRoot.getElementById("blender");
+        let picker = this.shadowRoot.getElementById('textColorPicker');
         let tags = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
         function invertHex(hex) {
             return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase();
