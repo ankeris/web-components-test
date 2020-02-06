@@ -4,8 +4,9 @@ import DatePicker from './date-picker';
 import OsChecker from './os-checker';
 import waves from './wave';
 import intersectionobserver from './intersectionobserver';
-import  backgroundpicker from './backgroundpicker';
-import  themepicker from './theme-picker';
+import backgroundpicker from './backgroundpicker';
+import themepicker from './theme-picker';
+import textBackgroundDarkmodePicker from './text-background-darkmode-picker';
 
 export {
     NovicellButton,
@@ -16,6 +17,5 @@ export {
     intersectionobserver,
     backgroundpicker,
     themepicker,
-
-
+    textBackgroundDarkmodePicker,
 }

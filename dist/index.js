@@ -19,3 +19,5 @@ const backgroundpicker_1 = __importDefault(require("./backgroundpicker"));
 exports.backgroundpicker = backgroundpicker_1.default;
 const theme_picker_1 = __importDefault(require("./theme-picker"));
 exports.themepicker = theme_picker_1.default;
+const text_background_darkmode_picker_1 = __importDefault(require("./text-background-darkmode-picker"));
+exports.textBackgroundDarkmodePicker = text_background_darkmode_picker_1.default;
