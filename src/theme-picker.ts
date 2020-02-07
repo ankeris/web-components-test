@@ -206,7 +206,7 @@ this.shadowRoot.getElementById('toggle')!.addEventListener('click', () => {
        clpicker.addEventListener('change', function (e:any) {
          console.log(e);
          const tempVal = e.target.value.replace("#", "");
-         (<any>box).style.backgroundColor = invertHex(tempVal);
+         (<any>box).style.backgroundColor = "#"+invertHex(tempVal);
        })
      }
 

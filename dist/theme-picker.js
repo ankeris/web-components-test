@@ -203,7 +203,7 @@ class StandardJSWebComponent extends HTMLElement {
             clpicker.addEventListener('change', function (e) {
                 console.log(e);
                 const tempVal = e.target.value.replace("#", "");
-                box.style.backgroundColor = invertHex(tempVal);
+                box.style.backgroundColor = "#" + invertHex(tempVal);
             });
         }
     }
